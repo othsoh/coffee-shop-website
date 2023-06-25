@@ -1,0 +1,92 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="intro">
+
+    <div class="bg-image h-100" style="background-color: #f0e8a5;">
+
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="display-1 fw-bolder d-flex justify-content-center align-items-center text-capitalize " >Mes Reservations</div>
+
+              <div class="card shadow-2-strong" style="background-color: #f5f7fa;">
+                <div class="card-body">
+                    
+                  <div class="table-responsive">
+                    
+                    <table class="table table-borderless mb-0">
+                      <thead>
+                        <tr>
+                            
+                          <th scope="col">Username</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Temps restant</th>
+                          <th scope="col">Personnes</th>
+                          <th scope="col">type</th>
+                          <th scope="col">Supprimer</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for reservation in reservations %}
+                        <tr>
+
+                          <td>{{reservation.user.username}}</td>
+                          <td>{{reservation.user.email}}</td>
+                          <td>{{ reservation.remaining_time }}</td>
+                          <td>{{reservation.num_guests}}</td>
+                          <td>{{reservation.reservation_type}}</td>
+                          <td>
+                            <a type="button" href="delete/{{reservation.id}}" class="btn btn-danger btn-sm px-3">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                          </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    html,
+body,
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: .5rem;
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, .2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+  </style>
+{% endblock %}

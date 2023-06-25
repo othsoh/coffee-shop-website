@@ -1,0 +1,36 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block content %}
+<!-- About Start -->
+<div class="container-fluid py-5">
+  <div class="container">
+      <div class="section-title">
+          <h4 class="d-flex align-items-center justify-content-center text-warning text-uppercase " style="letter-spacing: 5px; ">A propos de nous</h4>
+          <h1 class="display-4 d-flex align-items-center justify-content-center">THE BEST COFFEE</h1>
+      </div>
+      <div class="row">
+          <div class="col-lg-4 py-0 py-lg-5">
+              <h1 class="mb-3 " style="color: #6e4208;">Notre Histoire</h1>
+              <h5 class="mb-3">Notre histoire a commencé en 2022, lorsqu'un rêve est devenu réalité : l'ouverture de notre café.</h5>
+              <p>En 2022, nous avons ouvert notre café avec une passion pour le café et le désir de créer un lieu chaleureux. Nous avons offert une expérience gustative exceptionnelle, soutenu les producteurs locaux et rassemblé la communauté. Notre café est devenu bien plus qu'un commerce, c'est un lieu où les histoires se créent et où chacun se sent chez soi. Notre histoire continue avec enthousiasme, rejoignez-nous pour partager votre amour du café</p>
+              <a href="/reserver" class="btn btn-warning font-weight-bold py-2 px-4 mt-2">Reserver</a>
+
+            </div>
+          <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+              <div class="position-relative h-100">
+                  <img class="position-absolute w-100 h-100" src="{% static 'img/café-split.png' %}" style="object-fit: cover;">
+              </div>
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+              <h1 class="mb-3" style="color: #6e4208;">Notre Vision</h1>
+              <p>Notre vision est de créer un monde où le café devient une expérience authentique, inspirante et unificatrice pour tous Nous aspirons à être bien plus qu'un simple café . Nous voulons être un lieu de connexion, d'inspiration et de découverte.</p>
+              <h5 class="mb-3"><i class="fa fa-check text-warning mr-3"></i>Culture enrichissante du café</h5>
+              <h5 class="mb-3"><i class="fa fa-check text-warning mr-3"></i>Expérience client exceptionnelle</h5>
+              <h5 class="mb-3"><i class="fa fa-check text-warning mr-3"></i>Expansion et influence positive</h5>
+              <a href="/items/menu" class="btn btn-warning font-weight-bold py-2 px-4 mt-2">Notre Menu</a>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
